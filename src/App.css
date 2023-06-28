@@ -1,1 +1,178 @@
+/* Styling the box with all the letters inside. */
+.letters{
+    background-color: rgb(172, 233, 255);
+    margin: 0 10%;
+    display: grid;
+    gap: 15px;
+    row-gap: 30px;
+    grid-template-columns: repeat(9, 1fr);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 8px gray;
+}
 
+@media (max-width: 850px) {
+    .letters{
+        grid-template-columns: repeat(5, 1fr);
+        row-gap: 15px;
+        margin: 0;
+    }
+    .incorrect-letter-already-guessed, .correct-letter-already-guessed, .letter-unguessed{
+        margin: auto;
+    }
+}
+/* Styling all the letters */
+.incorrect-letter-already-guessed, .correct-letter-already-guessed, .letter-unguessed {
+    color: #FFF;
+    font-size: x-large;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: none;
+    padding: 5px;
+    margin: auto;
+    transition: transform 0.15s, background-color 0.15s, color 0.15s;
+    box-shadow: 1px 1px 7px rgb(108, 128, 149);
+}
+/* Styling all the letters based on whether they are guessed or not. */
+.letter-unguessed {
+    background-color: rgb(103, 103, 103);
+}
+
+.letter-unguessed:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: rgb(56, 56, 56);
+}
+
+.incorrect-letter-already-guessed {
+    background-color: rgb(176, 16, 16)
+}
+
+.correct-letter-already-guessed {
+    background-color: rgb(48, 120, 48);
+}
+
+/* Styling the player's progress display. */
+.current-user-guess {
+    font-size: x-large;
+    padding: 20px;
+    text-align: center;
+    letter-spacing: 5px;
+    margin: 20px auto;
+    width: 340px;
+    box-shadow: 1px 1px 7px gray;
+    border-radius: 20px;
+}
+/* Styling the way the image of lives is displayed. */
+.lives-display {
+    display: flex;
+    justify-content: center;
+}
+
+.lives-display img {
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px black;
+    margin: 20px 0px;
+}
+/* Styling the popup windows. */
+.game-won-popup-background, .game-lost-popup-background, .help-popup-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.388);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-lost-popup-box, .game-won-popup-box, .help-popup-box {
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 7px gray;
+    color: #FFF;
+}
+
+.game-lost-popup-box {
+    background-color: rgb(181, 59, 38);
+}
+
+.game-won-popup-box {
+    background-color: rgb(20, 148, 54);
+}
+
+.help-popup-box {
+    background-color: rgb(22, 69, 88);
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Styling the buttons in the UI. */
+.reset-button {
+    padding: 15px;
+    background-color: rgb(40, 40, 40);
+    color: #FFF;
+    border: none;
+    border-radius: 15px;
+    font-size: larger;
+    transition: transform 0.15s;
+    box-shadow: 1px 1px 7px rgb(86, 0, 0);
+}
+
+.reset-button-container {
+    text-align: center;
+}
+
+.game-won-popup-box .reset-button  {
+    box-shadow: 1px 1px 7px rgb(0, 91, 2);
+}
+
+
+.hide-help-button {
+    padding: 15px;
+    background-color: rgb(222, 222, 222);
+    color: #363636;
+    border: none;
+    border-radius: 15px;
+    font-size: larger;
+    transition: transform 0.15s;
+    box-shadow: 1px 1px 8px rgb(79, 93, 129);
+}
+
+.reset-button:hover, .hide-help-button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.hide-help-button-container {
+    text-align: center;
+}
+
+.help-buttons-container {
+    text-align: center;
+    margin: 15px;
+}
+
+.help-buttons-container button {
+    margin: 10px;
+    padding: 15px;
+    background-color: rgb(40, 40, 40);
+    color: #FFF;
+    border: none;
+    border-radius: 15px;
+    font-size: larger;
+    transition: transform 0.15s;
+    box-shadow: 1px 1px 7px gray;
+}
+
+.help-buttons-container button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+} 
