@@ -2,7 +2,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 //resetGameState is imported from the gameState slice.
 import { resetGameState } from '../redux/slices/gameStateSlice';
-import resetSound from '../assets/audio/resetSound.ogg'
+import resetSound from '../assets/audio/resetSound.ogg';
+
+const resetGameSound = new Audio(resetSound);
 
 //This component is a simple button that resets the game state. It dispatches the reset game state reducer.
 //It also uses the gameStateObject to see if the game sound is muted or not
@@ -15,7 +17,7 @@ const GameReset = () => {
             className='reset-button' 
             onClick={() => {
                 if(!gameStateObject.muted){
-                    new Audio(resetSound).play()
+                    resetGameSound.play()
                 }
                 dispatch(resetGameState());
             }

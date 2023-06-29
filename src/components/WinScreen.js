@@ -8,6 +8,9 @@ import { AnimatePresence, motion } from "framer-motion";
 //We also get the reset game button.
 import GameReset from "./GameReset";
 
+const winningSound = new Audio(winSound);
+const losingSound = new Audio(loseSound)
+
 //This component checks whether the game is won or lost and displays the appropriate popup window to inform the player.
 const WinScreen = () => {
   const gameStateObject = useSelector((state) => state.gameState);
@@ -15,9 +18,9 @@ const WinScreen = () => {
   //We play the winning or losing sound depending on whether the game is won or lost.
   if(!gameStateObject.muted){
     if(gameStateObject.gameOver && gameStateObject.gameWon){
-      new Audio(winSound).play()
+      winningSound.play()
     } else if (gameStateObject.gameOver && !gameStateObject.gameWon) {
-      new Audio(loseSound).play()
+      losingSound.play()
     }
   }
 

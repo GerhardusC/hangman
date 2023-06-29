@@ -2,8 +2,11 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { removeLife, markGuessed, checkWin } from '../redux/slices/gameStateSlice';
 //These are the two sounds that are made when the user clicks on a letter.
-import pingSound from '../assets/audio/pingSound.wav'
-import errorSound from '../assets/audio/errorSound.wav'
+import pingSound from '../assets/audio/pingSound.wav';
+import errorSound from '../assets/audio/errorSound.wav';
+
+const incorrectSound = new Audio(errorSound);
+const correctSound = new Audio(pingSound);
 
 //This component returns a block full of buttons, one for each letter.
 const LetterSelector = () => {
@@ -31,12 +34,12 @@ const LetterSelector = () => {
                             dispatch(markGuessed(letter));
                             if(!gameStateObject.wordToGuess.toLowerCase().includes(letter)){
                                 if(!gameStateObject.muted){
-                                    new Audio(errorSound).play()
+                                    incorrectSound.play()
                                 }
                                 dispatch(removeLife())
                             } else {
                                 if(!gameStateObject.muted){
-                                    new Audio(pingSound).play()
+                                    correctSound.play()
                                 }
                                 dispatch(checkWin())
                             } 
