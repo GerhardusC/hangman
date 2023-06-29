@@ -7,7 +7,7 @@ import imgState5 from '../assets/drawings/state5.GIF'
 import imgState6 from '../assets/drawings/state6.GIF'
 import imgState7 from '../assets/drawings/state7.GIF'
 import imgState8 from '../assets/drawings/state8.GIF'
-import imgState9 from '../assets/drawings/state8.GIF'
+import imgState9 from '../assets/drawings/state9.GIF'
 import imgState10 from '../assets/drawings/state10.gif'
 import imgState11 from '../assets/drawings/state11.GIF'
 //The useSelector will be used to get the lives of the user.
